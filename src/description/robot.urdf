@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<robot name="autobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="plugins.xacro"/>
+
+    <!--Base Link-->
+    <link name ="base_link">
+        <inertial>
+         <origin xyz="0 0 0" rpy="0 0 0"/>
+         <mass value="1.5"/>
+         <inertia
+            ixx="0.0017904"
+            ixy="-1.7258E-19"
+            ixz="-2.4796E-19"
+            iyy="0.0028365"
+            iyz="3.1906E-19"
+            izz="0.0043783" />   
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+            <material name="wood">
+                <color rgba="0.52 0.36 0.26 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+        </collision>\
+    </link>
+
+    <!--Left Back Link-->
+    <link name="left_back_link">
+        <inertial>
+            <origin
+                xyz="-0.00015314 -0.0025023 6.8342E-05"
+                rpy="0 0 0" />
+            <mass value="0.019493" />
+            <inertia
+                ixx="5.9732E-06"
+                ixy="1.6948E-08"
+                ixz="3.0697E-08"
+                iyy="1.1909E-05"
+                iyz="-7.5634E-09"
+                izz="6.0282E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+            <material name="rubber">
+                <color rgba="0.14 0.11 0.13 0.95"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!--Left Back Joint-->
+    <joint name="left_back_joint" type="continuous">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="left_back_link"/>
+        <axis xyz="0 1 0"/>
+        <dynamics damping="0.01" friction="0.01"/>
+    </joint>
+
+    <!--Right Back Link-->
+    <link name="right_back_link">
+        <inertial>
+        <origin
+            xyz="0.00016187 0.0025023 4.3839E-05"
+            rpy="0 0 0" />
+        <mass value="0.019493" />
+        <inertia
+            ixx="5.9651E-06"
+            ixy="1.7914E-08"
+            ixz="-2.0813E-08"
+            iyy="1.1909E-05"
+            iyz="4.8516E-09"
+            izz="6.0363E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+            <material name="rubber">
+                <color rgba="0.14 0.11 0.13 0.95"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!--Right Back Joint-->
+    <joint name="right_back_joint" type="continuous">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="right_back_link"/>
+        <axis xyz="0 1 0"/>
+        <dynamics damping="0.01" friction="0.01"/>
+    </joint>
+
+    <!--Left Front Link-->
+    <link name="left_front_link">
+        <inertial>
+            <origin 
+                xyz="-9.7213E-05 -0.0025023 0.00013665"
+                rpy="0 0 0" />
+            <mass value="0.019493" />
+            <inertia
+                ixx="6.0142E-06"
+                ixy="1.0759E-08"
+                ixz="3.8962E-08"
+                iyy="1.1909E-05"
+                iyz="-1.5123E-08"
+                izz="5.9872E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+            <material name="rubber">
+                <color rgba="0.14 0.11 0.13 0.95"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!--Left Front Joint-->
+    <joint name="left_front_joint" type="continuous">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="left_front_link"/>
+        <axis xyz="0 1 0"/>
+        <dynamics damping="0.01" friction="0.01"/>
+    </joint>
+
+    <!--Right Front Link-->
+    <link name="right_front_link">
+        <inertial>
+            <origin
+            xyz="0.00014263 0.0025023 8.8209E-05"
+            rpy="0 0 0" />
+        <mass value="0.019493" />
+        <inertia
+            ixx="5.9823E-06"
+            ixy="1.5785E-08"
+            ixz="-3.69E-08"
+            iyy="1.1909E-05"
+            iyz="9.7621E-09"
+            izz="6.0191E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+            <material name="rubber">
+                <color rgba="0.14 0.11 0.13 0.95"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename=""/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!--Right Back Joint-->
+    <joint name="right_front_joint" type="continuous">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="right_front_link"/>
+        <axis xyz="0 1 0"/>
+        <dynamics damping="0.01" friction="0.01"/>
+    </joint>
+
+    <!--Lidar Link-->
+  <link name="lidar_link">
+    <inertial>
+      <origin
+        xyz="1.249E-16 -6.9389E-17 0"
+        rpy="0 0 0" />
+      <mass value="0.082049" />
+      <inertia
+        ixx="2.5089E-05"
+        ixy="-1.8986E-21"
+        ixz="-9.4476E-21"
+        iyy="2.5089E-05"
+        iyz="9.4278E-21"
+        izz="4.1355E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="" />
+      </geometry>
+      <material name="Plastic">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!--Lidar Joint-->
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0 0 0.11462" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+<!--IMU Link-->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.025 0.025 0.0025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.025 0.025 0.0025"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+<!--IMU Joint-->
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0.075 0 0.1025" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+<!--Base Footprint-->
+  <link name="base_footprint"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 -0.0518795" rpy="0 0 0"/>
+  </joint>
+
+<!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.03 0.03"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.03 0.03"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="1 0 0" />
+    <origin xyz="0.123 0 0.035" rpy="0 0.1 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <link name="camera_link_optical"></link>
+
+  <joint name="camera_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+      <parent link="camera_link" />
+      <child link="camera_link_optical" />
+  </joint>
+
+</robot>
